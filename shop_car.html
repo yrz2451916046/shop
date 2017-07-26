@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>购物车</title>
+		<link rel="stylesheet" type="text/css" href="css/reset.css"/>
+		<link rel="stylesheet" type="text/css" href="css/index.css"/>
+		<link rel="stylesheet" type="text/css" href="css/shop_car.css"/>
+		<script type="text/javascript" src="js/jquery.js" ></script>
+		<script type="text/javascript" src="js/jquery.cookie.js" ></script>
+		<script type="text/javascript" src="js/underscore.js" ></script>
+		<script type="text/javascript" src="js/cookie.js" ></script>
+	</head>
+	<body>
+		<!--头部-->
+		<header>
+			<div id="header">
+				<a href="index.html"></a><!--LOGO-->
+				<ul>
+					<li id="portrait">
+						<a href=""><img src="" id="imG"/></a>
+						<a href="" id="uu_name"></a>
+						<div>
+							<a href=""><span>个人设置</span></a>
+							<a href=""><span>收货信息</span></a>
+							<a href=""><span>我的订单</span></a>
+							<a href="javascript:;" id="exit">退出</a>
+						</div>
+					</li>
+					<li id="login_enroll"><a href="login.html" class="same">登录</a><a href="enroll.html" class="same">注册</a></li>
+					<li class="line"></li>
+					<!--改变后的购物车-->
+					<li id="shopping_change"><span id="shopping_sum">0</span><a href="">购物车</a>
+						<div class="shopping_change">
+							<div class="add_shop">
+								<script type="text/template" id="templete_shop">
+									<dl>
+										<dt>
+											<a href="shop_car.html"><img src="<%= goods_thumb %>"/></a>
+										</dt>
+										<dd>
+											<p class="proTit">
+												<a href="shop_car.html" target="_blank"><%= goods_name %></a>
+											</p>
+											<p class="proColor">一只</p>
+											<div class="proNum">数量:1件<p class="proPrice">¥<%= goods_price %></p>
+											</div>
+										</dd>
+									</dl>
+								</script>
+							</div>
+							<p>查看我的购物车</p>
+						</div>
+					</li>
+					<!--改变前的购物车-->
+					<li class="classify" id="shopping"><a href="">购物车</a>
+						<div class="shopping">
+							<p>你的购物车暂时没有商品...</p>
+							<p>快去抢购良仓商品吧</p>
+						</div>
+					</li>
+					<li class="line"></li>
+					<li class="classify" id="message"><a href="">消息</a>
+						<ul>
+							<li><div><a href="">动态</a><span>0</span></div></li>
+							<li><div><a href="">评论</a><span>0</span></div></li>
+							<li><div><a href="">私信</a><span>0</span></div></li>
+							<li><div><a href="">粉丝</a><span>0</span></div></li>
+							<li><div><a href="">喜欢</a><span>0</span></div></li>
+							<li><div><a href="">通知</a><span>0</span></div></li>
+						</ul>
+					</li>
+					<li class="line"></li>
+					<li class="classify"><a href="">添加良品</a></li>
+				</ul>
+			</div>
+		</header>
+		<!--一级导航-->
+		<nav>
+			<ul id="nav">
+				<li><a href="">首页</a></li>
+				<!--商店-->
+				<li id="store"><a href="">商店</a>
+					<div>
+						<ul>
+							<li><img src="img/23687.png"/><span>家居</span>
+								<!--<ul>
+									<li>1</li>
+									<li>2</li>
+									<li>3</li>
+									<li>4</li>
+									<li>5</li>
+									<li>6</li>
+								</ul>-->
+							</li>
+							<li><img src="img/23685.png"/><span>家具</span></li>
+							<li><img src="img/23686.png"/><span>文具</span></li>
+							<li><img src="img/23683.png"/><span>数码</span></li>
+							<li><img src="img/23682.png"/><span>玩乐</span></li>
+							<li><img src="img/23684.png"/><span>厨卫</span></li>
+							<li><img src="img/23680.png"/><span>美食</span></li>
+							<li><img src="img/23679.png"/><span>男装</span></li>
+							<li><img src="img/23678.png"/><span>女装</span></li>
+							<li><img src="img/23677.png"/><span>童装</span></li>
+							<li><img src="img/23676.png"/><span>鞋包</span></li>
+							<li><img src="img/23675.png"/><span>配饰</span></li>
+							<li><img src="img/23681.png"/><span>美护</span></li>
+							<li><img src="img/23674.png"/><span>户外</span></li>
+							<li><img src="img/23669.png"/><span>植物</span></li>
+							<li><img src="img/23668.png"/><span>图书</span></li>
+							<li><img src="img/23672.png"/><span>艺术</span></li>
+							<li><img src="img/23669.png"/><span>礼物</span></li>
+							<li><img src="img/23670.png"/><span>推荐</span></li>
+						</ul>
+						<div>
+							<img src="img/315574.jpg"/>
+							<p>新视线: 2015年7月刊</p>
+						</div>
+						<p><a href="">查看所有品牌 ></a><a href="">最新到货 ></a></p>
+					</div>
+				</li>
+				<li><a href="">杂志</a></li>
+				<li><a href="">分享</a></li>
+				<li><a href="">达人</a></li>
+			</ul>
+			<div id="search">
+				<a href="javascript:;"></a>
+				<input type="text" placeholder="search..." id="search_txt"/>
+				<span></span>
+			</div>
+		</nav>
+		<!--购物车-->
+		<section>
+			<p><a href="index.html">良仓</a><b>></b><a href="#">玩具</a><b>></b><i id="goods_name"></i></p>
+			<div id="magnifier">
+				<img src="" id="goods_img" style="width: 350px;height: 350px;"/>
+				<h1><img src="" id="magnifier_img"/></h1>
+				<a href="#" id="dragBox"></a>
+			</div>	
+			<a href="javascript:;" id="add">加入购物车</a>
+		</section>
+		<!--购物车遮罩层-->
+		<a href="#" id="add_car"><img src="img/add.png"/></a>
+		<!--回到顶部按钮-->
+		<a href="javascript:;" id="pre"></a>
+		<!--服务区-->
+		<div id="service">
+			<a href="#">
+				<p></p>
+			</a>
+			<ul>
+				<li><span></span><p>全球精品</p><i>Global Selections</i></li>
+				<li><span></span><p>正品保证</p><i>Authenticity Guaranteed</i></li>
+				<li><span></span><p>全场包邮</p><i>Free Delivery</i></li>
+				<li><span></span><p>400-897-6336</p><i>工作日 09:00-18:00</i></li>
+			</ul>
+		</div>
+		<!--footer-->
+		<footer>
+			<div id="footer">
+				<div class="floatLeft">
+					<a href="">
+						<p>iPhone Android<br>客户端下载</p>
+						<ul>
+							<li><h6>下载iPhone版</h6></li>
+							<li><h6>下载Android版</h6></li>
+						</ul>
+					</a>
+					<ul id="link">
+						<li><a href="">关于良仓</a></li>
+						<li><a href="">服务协议</a></li>
+						<li><a href="">隐私保护政策</a></li>
+						<li><a href="">使用指南</a></li>
+						<li><a href="">联系我们</a></li>
+						<li><a href="">加入我们</a></li>
+						<li><a href="">友情链接</a></li>
+						<li><a href="">私信良仓</a></li>
+					</ul>
+					<pre>© 2013-2015 北京良仓文化传播有限公司版权所有 京ICP备13010677号-1 京公网安备11010502025627 
+ 公司名称：北京良仓文化传播有限公司  电话：010-58263516
+ 公司地址：北京朝阳区百子湾路32号6号楼1层60号.
+ 社会信用统一代码：91110105059231575L  食品许可证：JY11105160159557
+ 图书证名称：中华人民共和国出版物经营许可证  图书证编号：新出发京零 字第 朝 150051 号  
+					</pre>
+				</div>
+				<div class="floatRight">
+					<ul>
+						<li></li>
+						<li></li>
+						<li></li>
+					</ul>
+				</div>
+			</div>
+		</footer>
+		<script type="text/javascript" src="js/index.js" ></script>
+		<script type="text/javascript" src="js/shop_car.js" ></script>
+	</body>
+</html>

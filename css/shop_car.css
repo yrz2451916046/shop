@@ -1,0 +1,75 @@
+*{
+	margin: 0;
+	padding: 0;
+	list-style: none;
+}
+a,i{
+	font-style: normal;
+	text-decoration: none;
+}
+img{
+	border: 0;
+}
+section{
+	width: 1000px;
+	margin: 0 auto;
+	margin-top: 70px;
+	position: relative;
+}
+section>p>a{
+	color: #bfbfbf;
+	font-size: 12px;
+}
+section>p>b{
+	font-weight: normal;
+	color: #bfbfbf;
+}
+section>p i{
+	font-size: 12px;
+	color: #bfbfbf;
+}
+section #add{
+	width: 160px;
+	height: 32px;
+	position: absolute;
+	line-height: 32px;
+	text-align: center;
+	color: #000;
+	font-size: 13px;
+	background: #fff;
+	border: 1px solid black;
+	left: 420px;top: 398px;
+}
+#add_car{
+	position: fixed;
+	display: none;
+	left: 50%;margin-left: -262.5px;
+	top: 50%;margin-top: -72px;
+}
+/*===================放大镜====================*/
+#magnifier{
+	position: relative;
+	width: 350px;
+	height: 350px;
+}
+#magnifier>a{
+	position: absolute;
+	width: 50px;
+	height: 50px;
+	background: #000;
+	opacity: 0.5;top: 0;
+	display: none;
+}
+#magnifier h1{
+	position: absolute;
+	width: 350px;
+	height: 350px;
+	left: 370px;top: 0px;
+	display: none;
+	overflow: hidden;
+	/*pointer-events: none;*/	
+}
+#magnifier h1 img{
+	width: 1000px;
+	height: 1000px;
+}

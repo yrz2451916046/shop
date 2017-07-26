@@ -1,0 +1,153 @@
+*{margin: 0;padding: 0;list-style: none;}
+a{text-decoration: none;}
+img{vertical-align: top;}
+#banner{
+	width: 1000px;
+	height: 475px;
+	margin: 0 auto;
+	margin-top: 80px;
+	position: relative;
+}
+#banner .img{
+	width: 1000px;
+	height: 475px;
+}
+#banner .img a{
+	display: block;
+}
+#banner .img li{
+	position: absolute;
+	left: 0;top: 0;
+}
+#banner .arrow{
+	position: absolute;
+	top: 485px;left: 50%;
+	margin-left: -100px;
+}
+#banner .arrow li{
+	float: left;
+	width: 20px;
+	height: 5px;
+	background: #e8e8e8;
+	margin-left: 10px;
+}
+#banner .arrow li:first-child{
+	margin-left: 0;
+}
+#banner .arrow .change{
+	background: #45494d;
+}
+#banner .direction{
+	display: none;
+}
+#banner .direction li{
+	width: 50px;
+	height: 50px;
+	border-radius: 50%;
+	position: absolute;
+	z-index: 5;
+	cursor: pointer;
+	background: rgba(0,0,0,0.7);
+}
+#banner .direction li:first-child{
+	/*background: url(../img/normal_right.png) no-repeat;*/
+	top: 50%;left: 20px;
+	margin-top: -25px;
+}
+#banner .direction li:last-child{
+	/*background: url(../img/normal_left.png) no-repeat;*/
+	top: 50%;right: 20px;
+	margin-top: -25px;
+}
+#banner:hover .direction{
+	display: block;
+}
+/*====================广告====================*/
+#advert{
+	width: 1000px;
+	height: 403px;
+	margin: 0 auto;
+	margin-top: 20px;
+}
+#advert li{
+	float: left;
+	margin-left: 24px;
+	margin-top: 30px;
+}
+#advert li:first-child{
+	margin-left: 0;
+}
+#advert li:nth-child(4){
+	margin-left: -1000px;
+	margin-top: 243px;
+}
+#advert li:last-child{
+	margin-top: 23px;
+	margin-right: -3px;
+}
+#advert li a{
+	display: block;
+}
+/*====================人气良品文字描述====================*/
+#popular{
+	width: 100%;
+	margin: 0 auto;
+	text-align: center;
+	border-bottom: 1px solid #ccc;
+	color: #333;
+	margin-top: 60px;
+	font-size: 12px;
+	padding-bottom: 10px;
+}
+/*====================商品展示====================*/
+#goods{
+	width: 1000px;
+	margin: 0 auto;
+	height: auto;
+	/*position: relative;*/
+	overflow: hidden;
+}
+#goods .goods_list{
+	width: 316px;
+	/*position: absolute;*/
+	float: left;
+	margin-left: 26px;
+	margin-top: 40px;
+	cursor: pointer;
+}
+#goods .goods_list img{
+	width: 316px;
+	height: 316px;
+	border: 0;
+}
+#goods .goods_list p{
+	width: 100%;
+	height: 40px;
+	margin-top: 10px;
+}
+#goods .goods_list p .goods_name{
+	white-space: nowrap;
+	width: 216px;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	font-size: 14px;
+	color: #878787;
+}
+#goods .goods_list p .zan{
+	float: right;
+	padding-right: 30px;
+	font-size: 14px;
+	color: #878787;
+	background: url(../img/heart_gray20_18.png) no-repeat right center;
+}
+/*====================MORE====================*/
+#more{
+	width: 148px;
+	height: 50px;
+	display: block;
+	margin: 0 auto;
+	background: url(../img/icon.png) no-repeat 0 -640px;
+}
+#more:hover{
+	background-position: 0 -690px;
+}
